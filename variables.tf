@@ -14,3 +14,13 @@ variable "key_name" {
   description = "Name of the SSH keypair to use in AWS."
   default     = "TU_Dublin"
 }
+
+variable "access_key" {
+  description = "the access key"
+  default     = "insert"
+}
+
+variable "secret_key" {
+  description = "the secret key."
+  default     = "insert"
+}

@@ -1,16 +1,14 @@
 # stolen liberally from
 # https://github.com/hashicorp/terraform-provider-aws/tree/main/examples/eip
-terraform {
-  required_version = ">= 0.12"
-}
 
 provider "aws" {
   region = var.aws_region
+  access_key = var.access_key
+  secret_key = var.secret_key
 }
 
 resource "aws_eip" "default" {
   instance = aws_instance.web.id
-  vpc      = true
 }
 
 # Our default security group to access
@@ -53,9 +51,7 @@ resource "aws_instance" "web" {
 
   # The name of our SSH keypair you've created and downloaded
   # from the AWS console.
-  #
-  # https://console.aws.amazon.com/ec2/v2/home?region=us-west-2#KeyPairs:
-  #
+
   key_name = var.key_name
 
   # Our Security group to allow HTTP and SSH access

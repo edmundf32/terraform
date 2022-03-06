@@ -14,7 +14,7 @@ resource "aws_eip" "default" {
 # Our default security group to access
 # the instances over SSH and HTTP
 resource "aws_security_group" "default" {
-  name        = "eip_example"
+  name        = var.target_env
   description = "Used in the terraform"
 
   # SSH access from anywhere
@@ -64,6 +64,6 @@ resource "aws_instance" "web" {
 
   #Instance tags
   tags = {
-    Name = "eip-example"
+    Name = var.target_env
   }
 }

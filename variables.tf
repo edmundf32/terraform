@@ -10,6 +10,12 @@ variable "aws_amis" {
   }
 }
 
+# target env
+variable "target_env" {
+  description = "Name of the target environment"
+  default     = "Production"
+}
+
 variable "key_name" {
   description = "Name of the SSH keypair to use in AWS."
   default     = "TU_Dublin"

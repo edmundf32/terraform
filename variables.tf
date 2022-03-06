@@ -6,7 +6,7 @@ variable "aws_region" {
 # ubuntu-trusty-14.04 (x64)
 variable "aws_amis" {
   default = {
-    "eu-west-1a" = "ami-0258eeb71ddf238b3"
+    "eu-west-1" = "ami-0258eeb71ddf238b3"
   }
 }
 
